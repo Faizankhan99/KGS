@@ -2,7 +2,7 @@ import { Auth_Logout, Auth_Success, Error_user, Get_data } from "./Auth.type";
 
 const initial = {
     error: false,
-    data:[]||"",
+    data:[],
     token:""
 }
 

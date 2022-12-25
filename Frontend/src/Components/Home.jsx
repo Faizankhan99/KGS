@@ -6,29 +6,32 @@ import { DeleteData, GetData } from "../Store/Auth.action";
 
 export default function Home() {
   const data = useSelector((store) => store.Auth.data);
+  console.log(data);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GetData());
   }, []);
-  console.log(data);
+  // console.log(data);
 
   function Delete(id) {
     console.log(id);
     dispatch(DeleteData(id));
-    // setTimeout(() => {
-    //   dispatch(GetData());
-    // }, 1000);
+    setTimeout(() => {
+      dispatch(GetData());
+    }, 500);
   }
   return (
     <Box>
-      <Heading>ALL Courses</Heading>
+      <Heading ml="40%" mt="20px">
+        ALL Courses
+      </Heading>
 
       {data &&
         data.map((elem) => (
           <Box mt="40px">
             <Box
               display="flex"
-              border="1px solid red"
+              border="4px solid black"
               // justifyContent="space-around"
               w="60%"
               m="auto"
@@ -41,11 +44,11 @@ export default function Home() {
                   src={elem.imgUrl}
                   // borderRadius="90%"
                   w="100%"
-                  h="90%"
+                  h="80%"
                 />
               </Box>
               <Box>
-                <Heading as="h3" color="blue" mt="60px">
+                <Heading as="h3" color="blue" mt="70px">
                   Rs. {elem.price}/-
                 </Heading>
                 <Heading as="h2" fontSize="25px">

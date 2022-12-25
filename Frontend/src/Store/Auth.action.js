@@ -32,7 +32,7 @@ export const DeleteData = (id) => async(dispatch) =>{
     try {
         let res = await axios.delete(`http://localhost:8000/course/${id}`)
         // console.log(res.data)
-        dispatch({type:Get_data,payload:res.data})
+        // dispatch({type:Get_data,payload:res.data})
     } catch (err) {
         console.log(err)
  }

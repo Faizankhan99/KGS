@@ -14,9 +14,9 @@ export default function AllRoutes() {
         <Route
           path="/"
           element={
-            // <Private>
-            <Home />
-            // </Private>
+            <Private>
+              <Home />
+            </Private>
           }
         />
         <Route path="/login" element={<Login />} />

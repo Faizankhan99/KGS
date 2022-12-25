@@ -26,7 +26,7 @@ export default function Course() {
     setCourse({ ...course, [name]: value });
   }
 
-  function AddBlog({ title, description, duration, price, date }) {
+  function AddCourse({ title, description, duration, price, date }) {
     return axios.post("http://localhost:8000/course", {
       title: title,
       description: description,
@@ -39,15 +39,16 @@ export default function Course() {
   function handlesubmit(e) {
     e.preventDefault();
     setSubmit(course);
-    AddBlog(course)
+    AddCourse(course)
       .then((res) => {
         console.log(res.data.message);
         alert(res.data.message);
+        e.target.reset();
+        setCourse("");
       })
       .catch((err) => {
         console.log(err);
       });
-    setBlog("");
   }
 
   console.log(course);
