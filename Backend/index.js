@@ -1,9 +1,9 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const cors = require("cors");
-const User = require("../Routes/User.route")
-const Coures = require("../Routes/Course")
-const dbConnect = require("../config/db")
+const User = require("./Routes/User.route")
+const Coures = require("./Routes/Course")
+const dbConnect = require("./config/db")
 
 dotenv.config();
 let PORT = process.env.PORT||8080;
